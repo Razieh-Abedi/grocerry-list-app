@@ -7,13 +7,20 @@ function List({ items, removeItem, editItem }) {
       {items.map((item) => {
         const { id, title } = item;
         return (
-          <article key={id}>
+          <article
+            key={id}
+            className="d-flex justify-content-around text-center"
+          >
             <div>
               <p>{title}</p>
             </div>
             <div>
-              <FaEdit onClick={() => editItem(id)} />
-              <FaTrash onClick={() => removeItem(id)} />
+              <button className="btn btn-light">
+                <FaEdit onClick={() => editItem(id)} />
+              </button>
+              <button>
+                <FaTrash onClick={() => removeItem(id)} />
+              </button>
             </div>
           </article>
         );
