@@ -66,21 +66,22 @@ function App() {
     localStorage.setItem("list", JSON.stringify(list));
   }, [list]);
   return (
-    <div className="container text-center my-5">
+    <div className="container text-center my-5 mainSection">
       <section className="my-3">
-        <h1>Grocerry Bud</h1>
-        <form onSubmit={handleSubmit}>
+        <h1 className="mb-3">Grocerry Bud</h1>
+        <form className="mb-3" onSubmit={handleSubmit}>
           {alert.show && (
             <Alert {...alert} removeAlert={showAlert} list={list} />
           )}
           <input
             type="text"
             placeholder="e.g. eggs"
+            className="me-2"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
           <button className="btn btn-success" type="submit">
-            {isEditing ? "Edit" : "Submit"}
+            {isEditing ? "Edit" : "Add to list"}
           </button>
         </form>
       </section>
@@ -88,11 +89,21 @@ function App() {
       {list.length > 0 && (
         <section className="my-3">
           <List items={list} removeItem={removeItem} editItem={editItem} />
-          <button className="btn btn-danger" onClick={clearList}>
+          <button className="btn btn-danger mt-3" onClick={clearList}>
             Clear List
           </button>
         </section>
       )}
+      <footer className="text-center">
+        <a
+          href="https://raziwebdeveloper.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className=" text-decoration-none text-black mb-0"
+        >
+          Developed with ❤ by raziwebdeveloper.com
+        </a>
+      </footer>
     </div>
   );
 }

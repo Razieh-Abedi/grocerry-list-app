@@ -9,17 +9,23 @@ function List({ items, removeItem, editItem }) {
         return (
           <article
             key={id}
-            className="d-flex justify-content-around text-center"
+            className="d-flex justify-content-around text-center container bg-light align-items-center"
           >
             <div>
               <p>{title}</p>
             </div>
             <div>
-              <button className="btn btn-light">
-                <FaEdit onClick={() => editItem(id)} />
+              <button className="border border-0 bg-white">
+                <FaEdit
+                  className="text-success me-2 listIcon"
+                  onClick={() => editItem(id)}
+                />
               </button>
-              <button>
-                <FaTrash onClick={() => removeItem(id)} />
+              <button className="border border-0 bg-white">
+                <FaTrash
+                  className="text-danger listIcon"
+                  onClick={() => removeItem(id)}
+                />
               </button>
             </div>
           </article>
