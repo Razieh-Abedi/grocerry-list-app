@@ -1,6 +1,7 @@
 import React from "react";
+import { FaTrash, FaEdit } from "react-icons/fa";
 
-function List({ items }) {
+function List({ items, removeItem, editItem }) {
   return (
     <div>
       {items.map((item) => {
@@ -11,8 +12,8 @@ function List({ items }) {
               <p>{title}</p>
             </div>
             <div>
-              <button>Edit</button>
-              <button>Delete</button>
+              <FaEdit onClick={() => editItem(id)} />
+              <FaTrash onClick={() => removeItem(id)} />
             </div>
           </article>
         );
