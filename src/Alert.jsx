@@ -8,7 +8,7 @@ function Alert({ msg, type, removeAlert, list }) {
     return () => clearTimeout(timeout);
   }, [list]);
   return (
-    <div className="w-25 mx-auto">
+    <div className="w-75 mx-auto">
       <p className={`alert alert-${type}`}>{msg}</p>
     </div>
   );
